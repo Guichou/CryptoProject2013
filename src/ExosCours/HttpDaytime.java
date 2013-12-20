@@ -65,7 +65,7 @@ public class HttpDaytime implements HttpHandler {
         server = HttpServer.create(new InetSocketAddress(address, port), 0);
         // association du contexte et du handler au serveur
         server.createContext(CONTEXT, this);
-        // l'exécuteur associé au serveur fait que chaque requète 
+        // l'exécuteur associé au serveur fait que chaque requète
         // sera traitée dans un thread séparé
         server.setExecutor(new Executor() {
             public void execute(Runnable command) {
