@@ -44,7 +44,7 @@ public class HttpsHelloServer {
             Calendar cal = Calendar.getInstance();
             Date date = cal.getTime();
             // le string exposant la date
-            String dateString = "hello";
+            String dateString = "hello";/* ou df.format(date) pour afficher la date */
             // préparation du message
             String message = String.format("<h1 align='center'>%s</h1>", dateString);
             // récupération des headers de la réponse
