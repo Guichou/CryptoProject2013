@@ -57,10 +57,10 @@ public class HttpsFileserverServer implements HttpHandler {
           
         /* Si le paramètre est "file" */
         if(url.get("/fileserver?file") !=null){
-        	/* On signale que l'objet envoyé est un image */
+        	/* On signale que l'objet envoyé est une image */
         	respHeaders.set("Content-Type", "image/jpeg");
-	        File file = new File ("data/"+url.get("/fileserver?file"));
-	        byte [] bytearray  = new byte [(int)file.length()];
+        	File file = new File ("data/"+url.get("/fileserver?file"));    
+        	byte [] bytearray  = new byte [(int)file.length()];
 	        FileInputStream fis = new FileInputStream(file);
 	        BufferedInputStream bis = new BufferedInputStream(fis);
 	        bis.read(bytearray, 0, bytearray.length);
@@ -118,6 +118,7 @@ public class HttpsFileserverServer implements HttpHandler {
      * @param address l'adresse de l'hôte hébergeant le service
      * @param port le port associé au service
      * @throws IOException si la création du serveur échoue
+     * @throws NoSuchAlgorithmException pour le SSLContext
      */
     public HttpsFileserverServer(String address, int port) throws IOException, NoSuchAlgorithmException {
         /* Création du serveur */

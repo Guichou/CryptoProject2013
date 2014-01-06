@@ -10,8 +10,7 @@ public class TrustModifier {
       TRUSTING_HOSTNAME_VERIFIER = new TrustingHostnameVerifier();
    private static SSLSocketFactory factory;
 
-   /** Call this with any HttpURLConnection, and it will 
-    modify the trust settings if it is an HTTPS connection. */
+   
    public static void relaxHostChecking(HttpURLConnection conn) 
        throws KeyManagementException, NoSuchAlgorithmException, KeyStoreException {
 
